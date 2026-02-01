@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SH-AI Provider | StaffHealth Workforce Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --bg-card: #ffffff;
+      --border-subtle: #e0e4f0;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #1f4fbf;
+      --accent-soft: #e7edf9;
+      --accent-dark: #122650;
+      --success: #15803d;
+      --warning: #b45309;
+      --info: #2563eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e8efff 0, #f4f6fb 50%, #f9fafb 100%);
+      color: var(--text-main);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--accent-dark), #13366e);
+      padding: 14px 22px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    main {
+      padding: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .section {
+      background: var(--bg-card);
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 12px rgba(15,23,42,0.05);
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border: 1px solid var(--accent);
+      white-space: nowrap;
+    }
+
+    .shift-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .shift-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .shift-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .btn-primary {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: none;
+      font-size: 12px;
+      background: var(--accent);
+      color: white;
+      cursor: pointer;
+      width: fit-content;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.3);
+    }
+
+    .metric-box {
+      padding: 10px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .metric-value {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 2px;
+      color: var(--accent-dark);
+    }
+
+    .progress-bar {
+      height: 6px;
+      width: 100%;
+      background: #e5e7eb;
+      border-radius: 999px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+      width: 64%;
+    }
+
+    .recommendation {
+      font-size: 13px;
+      background: #e0edff;
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 6px;
+      color: var(--accent-dark);
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #9ca3af;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="brand">SH-AI Provider</div>
+    <div class="subtitle">Your personalized, AI-powered staffing & career engine</div>
+  </div>
+  <div class="subtitle">CNA: Jane Doe · Reliability 92/100</div>
+</header>
+
+<main>
+
+  <!-- Recommended Shifts -->
+  <section class="section">
+    <div class="section-title">⭐ Your Best-Fit Shifts (Recommended by SH-AI)</div>
+
+    <div class="shift-card">
+      <div class="shift-title">Memory Care · Evening Shift</div>
+      <div class="shift-meta">
+        <span>4pm–10pm · Fri, Feb 14</span>
+        <span class="chip">High Fit</span>
+      </div>
+      <div class="shift-meta">
+        <span>Strong request-back history</span>
+        <span>12 miles away</span>
+      </div>
+      <button class="btn-primary">Accept Shift</button>
+    </div>
+
+    <div class="shift-card">
+      <div class="shift-title">Assisted Living · Weekend Double</div>
+      <div class="shift-meta">
+        <span>Sat 7am–7pm</span>
+        <span class="chip">Stability Bonus Eligible</span>
+      </div>
+      <div class="shift-meta">
+        <span>You’ve had 3 perfect weekends here</span>
+        <span>9 miles away</span>
+      </div>
+      <button class="btn-primary">Accept Shift</button>
+    </div>
+
+    <div class="shift-card">
+      <div class="shift-title">Skilled Nursing · Night Shift</div>
+      <div class="shift-meta">
+        <span>11pm–7am · Tues</span>
+        <span class="chip">Pro Match</span>
+      </div>
+      <div class="shift-meta">
+        <span>Great reliability on nights</span>
+        <span>14 miles away</span>
+      </div>
+      <button class="btn-primary">Accept Shift</button>
+    </div>
+  </section>
+
+  <!-- Your Stats -->
+  <section class="section">
+    <div class="section-title">📊 Your Performance & Progress</div>
+
+    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+      <div class="metric-box">
+        <div class="metric-label">Reliability</div>
+        <div class="metric-value">92/100</div>
+      </div>
+
+      <div class="metric-box" style="flex: 1;">
+        <div class="metric-label">Stability Streak</div>
+        <div class="metric-value">17 shifts</div>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" style="width: 82%;"></div>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-label">FT Eligibility</div>
+        <div class="metric-value">148 / 182 hrs</div>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" style="width: 81%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalized Recommendations -->
+  <section class="section">
+    <div class="section-title">🧠 SH-AI Recommendations</div>
+
+    <div class="recommendation">
+      You are **34 hours away** from being eligible for a **full-time hire** at two communities where you’ve
+      performed exceptionally well (Hudson Oaks MC & Willow Ridge AL).  
+      <br><br>
+      Based on your strengths in night shift and memory care, SH-AI suggests prioritizing:
+      <ul style="margin: 6px 0 6px 20px;">
+        <li>2 night shifts this week</li>
+        <li>1 weekend shift next week</li>
+      </ul>
+      This will elevate your reliability score to **94/100** and complete your FT eligibility.
+    </div>
+  </section>
+
+  <!-- Burnout Monitor -->
+  <section class="section">
+    <div class="section-title">💙 Burnout & Wellness Monitor</div>
+    <div class="recommendation" style="background:#fef9c3; border-color:#facc15; color:#78350f;">
+      SH-AI has detected a slight increase in late check-ins and a 3-week streak of heavy workloads.
+      <br><br>
+      Recommendation:
+      <ul style="margin: 6px 0 6px 20px;">
+        <li>Choose lighter shifts for the next 5–7 days</li>
+        <li>Avoid double shifts this weekend</li>
+        <li>Consider an AL shift instead of MC to prevent fatigue</li>
+      </ul>
+      Staying balanced helps preserve your reliability score and career momentum.
+    </div>
+  </section>
+
+  <!-- Career Path -->
+  <section class="section">
+    <div class="section-title">🌱 Your Career Path Progress</div>
+    <div class="recommendation" style="background:#e0f2fe; border-color:#38bdf8; color:#075985;">
+      You are on track for the **“Memory Care Pro” badge** and **Gold Reliability Level**.
+      These unlock:
+      <ul style="margin:6px 0 6px 20px;">
+        <li>Preferred shift access</li>
+        <li>Stability bonuses</li>
+        <li>Higher Fit Score visibility</li>
+        <li>Faster FT conversion opportunities</li>
+      </ul>
+      Keep your streak going — SH-AI is actively matching you to the roles where you thrive.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  SH-AI Provider is a concept prototype mockup for StaffHealth clinical workforce optimization.
+</footer>
+
+</body>
+</html>
